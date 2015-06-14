@@ -46,16 +46,13 @@
 
     Use
 
-        ~~~ {.lang}
+        ~~~
         some code
         ~~~
+        {: .lang}
 
     where `lang` is `bash` for the Unix Shell, `r` for R, `matlab` for MATLAB,
-    `python` for Python, and `sql` for SQL. For a full list, check:
-
-    ~~~ {.bash}
-    $ pandoc -v
-    ~~~
+    `python` for Python, and `sql` for SQL.
 
 ## Debugging
 
@@ -77,15 +74,17 @@ Please add notes about problems and solutions below.
     Git has likely checked out the files with the incorrect line endings.
     On Unix systems the recommended setting is:
 
-    ~~~ {.bash}
+    ~~~
     git config --global core.autocrlf input
     ~~~
+    {: .bash}
 
     and on Windows:
 
-    ~~~ {.bash}
+    ~~~
     git config --global core.autocrlf true
     ~~~
+    {: .bash}
 
     Note that after changing this setting you will need to either re-clone
     or re-checkout the files in the repository.

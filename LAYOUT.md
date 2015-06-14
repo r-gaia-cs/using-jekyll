@@ -133,9 +133,10 @@ not a standard part of Pandoc, so we're avoiding them as well.
     ---
     Paragraph(s) of introductory material.
 
-    > ## Prerequisites {.prereq}
+    > ## Prerequisites
     >
     > What learners need to know before tackling this lesson.
+    {: .prereq}
 
     ## Topics
 
@@ -171,49 +172,55 @@ Each topic page must be structured as follows:
     subtitle: Topic Title
     minutes: 10
     ---
-    > ## Learning Objectives {.objectives}
+    > ## Learning Objectives
     >
     > * Learning objective 1
     > * Learning objective 2
+    {: .objectives}
 
     Paragraphs of text
     --- possibly including [definitions](reference.html#definitions) ---
     mixed with:
 
-    ~~~ {.python}
+    ~~~
     some code:
         to be displayed
     ~~~
+    {: .python}
 
     and:
 
-    ~~~ {.output}
+    ~~~
     output
     from
     program
     ~~~
+    {: .output}
 
     and:
 
-    ~~~ {.error}
+    ~~~
     error reports from programs (if any)
     ~~~
+    {: .error}
 
     and possibly including some of these:
 
-    > ## Callout Box {.callout}
+    > ## Callout Box
     >
     > An aside of some kind.
+    {: .callout}
 
     and one or more of these at the end:
 
-    > ## Challenge Title {.challenge}
+    > ## Challenge Title
     >
     > Description of a single challenge,
     > separated from the title by a blank line.
     > There may be several challenges;
     > they should all come at the end of the file,
     > and each should have a short, meaningful title.
+    {: .challenge}
 
 **Notes:**
 
@@ -231,36 +238,41 @@ Each topic page must be structured as follows:
     (like `[definitions](reference.html#definitions)`).
     This is need to enable links from name diferent from the key word defined.
 
-5.  When laying out source code, use `{.lang}` as a style on the
-    opening `~~~` line.  For Unix Shell commands use:
+5.  When laying out source code, use `{.lang}` as a style after the block.
+    For Unix Shell commands use:
 
-        ~~~ {.bash}
+        ~~~
         $ some-command
         ~~~
+        {: .bash}
 
     For MATLAB use:
 
-        ~~~ {.matlab}
+        ~~~
         some code
         ~~~
+        {: .matlab}
 
     For R use:
 
-        ~~~ {.r}
+        ~~~
         some code
         ~~~
+        {: .r}
 
     For Python use:
 
-        ~~~ {.python}
+        ~~~
         some code
         ~~~
+        {: .python}
 
     For SQL use:
 
-        ~~~ {.sql}
+        ~~~
         some code
         ~~~
+        {: .sql}
 
 ## Writing Lessons with R Markdown
 
@@ -298,10 +310,11 @@ other knitr options. Thus a lesson should look like the following:
     opts_chunk$set(fig.path = "fig/topic-title-")
     ```
 
-    > ## Learning Objectives {.objectives}
+    > ## Learning Objectives
     >
     > * Learning objective 1
     > * Learning objective 2
+    {: .objectives}
 
     Paragraphs of text
     --- possibly including [definitions](reference.html#definitions) ---
