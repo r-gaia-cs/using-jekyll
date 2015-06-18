@@ -165,6 +165,165 @@ blockquote {
     width: 90%;
     font-size: inherit;
 }
+/*Styling for Block Quotes*/
+blockquote{
+    width:943px;
+}
+.objectives{
+    border:none;
+}
+
+blockquote h2{
+    background-image: linear-gradient(to bottom, #fcf8e3 0%, #faf2cc 100%);
+    border:1px solid #faebcc;
+    background-repeat: repeat-x;
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    display: inline-block;
+    width: 100%;
+}
+
+blockquote p{
+    padding:15px;
+    font-size: 14px;
+    line-height: 1.42857143;
+     border:1px solid #faebcc;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+blockquote.callout h2 {
+    background-image: linear-gradient(to bottom, #d9edf7 0%, #c4e3f3 100%);
+    background-repeat: repeat-x;
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+blockquote.challenge h2{
+    background-image: linear-gradient(to bottom, #dff0d8 0%, #d0e9c6 100%);
+    background-repeat: repeat-x;
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+blockquote.challenge p{
+    border:1px solid #d6e9c6;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    padding:15px;
+    font-size: 14px;
+    line-height: 1.42857143;
+}
+
+
+blockquote.callout p{
+    padding:15px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border:1px solid #bce8f1;;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+blockquote h2{
+    color: #8a6d3b;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 16px;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+}
+h2#prerequisites:before { 
+    font-family: 'Glyphicons Halflings'; 
+    content: "\e233"; 
+    float: left;
+    padding-right:10px;
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased; 
+      } 
+h2#getting-ready:before{
+    font-family: 'Glyphicons Halflings'; 
+    content: "\e067";
+    float: left;
+    padding-right:10px;
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+h2#learning-objectives:before{
+    font-family: 'Glyphicons Halflings';
+    content: "\e124";
+    float: left;
+    padding-right:10px;
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+h2#callout-box{
+    color: #31708f;
+}
+h2#callout-box:before{
+    font-family: 'Glyphicons Halflings';
+    content: "\e146";
+    float: left;
+    padding-right:10px;
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+h2#challenge-title{
+    color: #3c763d;
+}
+h2#challenge-title:before{
+    ont-family: 'Glyphicons Halflings';
+    content: "\270f";
+    float: left;
+    padding-right:10px;
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+blockquote{
+    border:none;
+    margin-left:0;
+    padding-left:0;
+    margin-top:1px;
+    
+}
+pre.python{
+    color:ForestGreen;
+}
 
 /* Citation for testimonial quote. */
 blockquote.testimonial cite {
