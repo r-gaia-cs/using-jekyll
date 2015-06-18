@@ -13,6 +13,44 @@
       {% include banner.html %}
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
+          <nav>
+          {% for f in site.pages %}
+            {% if f.name == page.name %}
+              {% if f.name contains '-' %}
+                {% if prev.name contains '-' != false %}
+                  <a id="previous-link" href="{{ prev.name | replace: "md", "html" }}">&lt;&lt; Previous</a>
+                {% endif %}
+                <a id="index-link" href="index.html">Index</a>
+                {% if forloop.last == false %}
+                  {% assign next = site.pages[forloop.index] %}
+                  {% if next.name contains '-' %}
+                    <a id="next-link" href="{{ next.name | replace: "md", "html" }}">Next &gt;&gt;</a>
+                  {% else %}
+                    <a id="next-link" href="reference.html">Next &gt;&gt;</a>
+                  {% endif %}
+                {% endif %}
+              {% endif %}
+              {% if f.name == "reference.md" %}
+                <a id="previous-link" href="{{ prevreference.name | replace: "md", "html" }}">&lt;&lt; Previous</a>
+                <a id="index-link" href="index.html">Index</a>
+                <a id="next-link" href="discussion.html">Next &gt;&gt;</a>
+              {% endif %}
+              {% if f.name == "discussion.md" %}
+                <a id="previous-link" href="reference.html">&lt;&lt; Previous</a>
+                <a id="index-link" href="index.html">Index</a>
+                <a id="next-link" href="instructors.html">Next &gt;&gt;</a>
+              {% endif %}
+              {% if f.name == "instructors.md" %}
+                <a id="previous-link" href="discussion.html">&lt;&lt; Previous</a>
+                <a id="index-link" href="index.html">Index</a>
+              {% endif %}
+            {% endif %}
+            {% assign prev = f %}
+            {% if f.name contains '-' %}
+            {% assign prevreference = f %}
+            {% endif %}
+          {% endfor %}
+          </nav>
           <h1 class="title">{{site.title}}</h1>
           {% if page.subtitle %}<h2 class="subtitle">{{page.subtitle}}</h2>{% endif %}
           {{content}}
