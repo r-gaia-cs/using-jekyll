@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="generator" content="pandoc">
-    <title>Software Carpentry: {{page.title}}</title>
+    <title>Software Carpentry: {{site.title}}{% if page.title %} / {{page.title}}{% endif %}</title>
     {% include header.html %}
   </head>
   <body class="lesson">
@@ -13,7 +13,7 @@
       {% include banner.html %}
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
-          <h1 class="title">{{page.title}}</h1>
+          <h1 class="title">{{site.title}}</h1>
           {% if page.subtitle %}<h2 class="subtitle">{{page.subtitle}}</h2>{% endif %}
           {{content}}
         </div>
