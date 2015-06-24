@@ -1,6 +1,5 @@
 ---
 layout: page
-title: Lesson Title
 subtitle: Topic Title Two
 minutes: 10
 ---

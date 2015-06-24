@@ -1,6 +1,5 @@
 ---
 layout: page
-title: Lesson Title
 ---
 Paragraph of introductory material.
 
@@ -10,7 +9,7 @@ Paragraph of introductory material.
 > before tackling this lesson.
 {: .prereq}
 
-> ## Getting ready
+> ## Getting Ready
 >
 > A short paragraph describing
 > what learners need to do before tackling this lesson.
@@ -23,7 +22,6 @@ Paragraph of introductory material.
 
 ## Other Resources
 
-*   [Motivation](motivation.html)
 *   [Reference](reference.html)
 *   [Discussion](discussion.html)
 *   [Instructor's Guide](instructors.html)

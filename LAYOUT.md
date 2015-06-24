@@ -16,14 +16,14 @@ submodules or clever tricks with symbolic links).
     ~~~
 
 2.  Other files in the root directory: the source of the lesson's web
-    pages (and possibly auxiliary files like IPython Notebooks and R
+    pages (and possibly auxiliary files like Jupyter Notebooks and R
     Markdown files).
 
 3.  `code/`, `data/`, and `fig/`: sub-directories containing sample
     code, data files, and figures.  See "Code, Data, and Figures"
     below.
 
-4.  `css/`, `img/`, `js/`, and `deck.js/`: style sheets, artwork, and
+4.  `css/`, `img/`, and `js/`: style sheets, artwork, and
     Javascript used in the lesson's web site.  See "Support Files"
     below.
 
@@ -31,6 +31,10 @@ submodules or clever tricks with symbolic links).
     "Support Files" below.
 
 6. `tools/`: tools for managing lessons. See "Tools" below.
+
+7. `_config.yml`: a Jekyll configuration file.
+   Authors should leave most of the settings alone,
+   but will need to change the lesson title.
 
 # Code, Data, and Figures
 
@@ -50,7 +54,7 @@ plots, and diagrams used in the lessons must go in a `fig/` directory.
     data file (since the program's working directory will be the root
     directory, not the `data` directory).
 
-2.  IPython Notebooks and R Markdown files, which are both code and
+2.  Jupyter Notebooks and R Markdown files, which are both code and
     the source for web pages, should go in the root directory.  These
     will not be checked by our validation tool, or indexed by other
     tools we plan to build.
@@ -63,8 +67,7 @@ plots, and diagrams used in the lessons must go in a `fig/` directory.
 
 Files used to display the lesson, such as artwork, CSS, and
 Javascript, are stored in `img/`, `css/`, and `js/` directories of
-their own, while the `deck.js/` directory contains files used to make
-HTML slideshows.  We keep website artwork in the `img/` directory
+their own.  We keep website artwork in the `img/` directory
 separate from figures used in the lesson (which are stored in `fig/`)
 to make it simple to update the former automatically.  Most authors
 should not need to modify any of the support files themselves.
@@ -80,8 +83,8 @@ naming conventions, but the files they contain are for Pandoc.
 The `tools/` directory contains tools to help create and maintain
 lessons:
 
-*   `tools/check`: make sure that everything is formatted properly, and
-    print error messages identifying problems if it's not.
+*   `tools/check.py`: make sure that everything is formatted properly,
+    and print error messages identifying problems if it's not.
 
 # Pages
 
@@ -98,30 +101,23 @@ The root directory holds the content of the lesson, and must contain:
     this lesson, and is about the filesystem. (Note that we use hyphens
     rather than underscores in filenames.) See "Topics" below.
 
-4.  `motivation.md`: slides for a short introductory presentation (three
-    minutes or less) explaining what the lesson is about and why people
-    would want to learn it. See "Introductory Slides" below.
-
-5.  `reference.md`: a cheat sheet summarizing key terms and commands,
+4.  `reference.md`: a cheat sheet summarizing key terms and commands,
     syntax, etc., that can be printed and given to learners. See
     "Reference Guide" below.
 
-6.  `discussion.md`: notes about more advanced ideas that would
+5.  `discussion.md`: notes about more advanced ideas that would
     distract from the main lesson, and pointers to where to go next.
     See "Discussion Page" below.
 
-7.  `instructors.md`: the instructor's guide for the lesson. See
+6.  `instructors.md`: the instructor's guide for the lesson. See
     "Instructor's Guide" below.
 
-8.  `CONTRIBUTING.md`: instructions for people who want to contribute.
+7.  `CONTRIBUTING.md`: instructions for people who want to contribute.
     This file should be edited to replace references to `lesson-template`
     with references to your lesson's repository.
 
-Note: the lesson's title is repeated in several files.  We could
-put this in the Makefile, and insert it into pages when compiling, but
-then authors would have to edit the Makefile (which we want to avoid).
-We could also put it in some sort of configuration file, but they're
-not a standard part of Pandoc, so we're avoiding them as well.
+Our [the design document](DESIGN.html) explains why we use blockquotes
+and put styles in curly braces after blocks.
 
 ## Home Page
 
@@ -129,7 +125,6 @@ not a standard part of Pandoc, so we're avoiding them as well.
 
     ---
     layout: lesson
-    title: Lesson Title
     ---
     Paragraph(s) of introductory material.
 
@@ -145,7 +140,6 @@ not a standard part of Pandoc, so we're avoiding them as well.
 
     ## Other Resources
 
-    *   [Motivation](motivation.html)
     *   [Reference](reference.html)
     *   [Discussion](discussion.html)
     *   [Instructor's Guide](instructors.html)
@@ -168,7 +162,6 @@ Each topic page must be structured as follows:
 
     ---
     layout: page
-    title: Lesson Title
     subtitle: Topic Title
     minutes: 10
     ---
@@ -238,8 +231,8 @@ Each topic page must be structured as follows:
     (like `[definitions](reference.html#definitions)`).
     This is need to enable links from name diferent from the key word defined.
 
-5.  When laying out source code, use `{.lang}` as a style after the block.
-    For Unix Shell commands use:
+5.  When laying out source code, use `{.lang}` as a style on the
+    opening `~~~` line.  For Unix Shell commands use:
 
         ~~~
         $ some-command
@@ -289,8 +282,6 @@ generate the Markdown and html versions by running the command `make
 preview`. This first runs the `knit` command from the [knitr][]
 package to convert to Markdown, and then pandoc to convert to html.
 
-[knitr]: http://yihui.name/knitr/
-
 To ensure that the generated Markdown files follow the lesson template
 guidelines, `source` the R file
 [tools/chunk-options.R](tools/chunk-options.R). This file contains
@@ -300,7 +291,6 @@ other knitr options. Thus a lesson should look like the following:
 
     ---
     layout: page
-    title: Lesson Title
     subtitle: Topic Title
     minutes: 10
     ---
@@ -350,43 +340,10 @@ random number generation is outside the scope of the lesson,
     summary(ex_dat)
     ```
 
-## Motivational Slides
-
-Every lesson must include a short slide deck in `motivation.md` suitable for a short
-presentation (3 minutes or less) that the instructor can use to explain
-to learners how knowing the subject will help them.  The slides must
-use level-2 headings as slide titles, but may use anything within the slide:
-
-    ---
-    layout: slides
-    title: Lesson Title
-    subtitle: Motivation
-    ---
-    ## Our Mission
-
-    We make scientists and engineering more productive
-    by teaching them basic computing skills.
-
-
-    ## The Problem
-
-    - Surveyed 1972 scientists in 2008.
-    - "How do you use computers?"
-    - "How did you learn what you know?"
-
-**Notes:**
-
-1.  We use [deck.js](http://imakewebthings.com/deck.js/) for our slides
-    as it is simpler and prettier than alternatives like
-    [reveal.js](http://lab.hakim.se/reveal-js/).
-
-2.  For examples of slideshows, please see the
-    [slideshow repository](https://github.com/swcarpentry/slideshows).
-
 ## Reference Guide
 
-The reference guide in `reference.md` is a cheat sheet for learners to print, doodle on,
-and take away.  Its format is deliberately unconstrained for now,
+The reference guide in `reference.md` is a cheat sheet for learners to print,
+doodle on, and take away.  Its format is deliberately unconstrained for now,
 since we'll need to see a few before we can decide how they ought to
 be laid out (or whether they need to be laid out the same way at all).
 
@@ -395,7 +352,6 @@ a definition list:
 
     ---
     layout: page
-    title: Lesson Title
     subtitle: Reference
     ---
     ...commands and examples...
@@ -417,7 +373,6 @@ content is otherwise unconstrained:
 
     ---
     layout: page
-    title: Lesson Title
     subtitle: Discussion
     ---
     ## Something That May Be Useful
@@ -443,14 +398,8 @@ structure is:
 
     ---
     layout: page
-    title: Lesson Title
     subtitle: Instructor's Guide
     ---
-    ## Legend
-
-    One or more paragraphs laying out the lesson's legend (i.e., the story
-    behind its running example).
-
     ## Overall
 
     * Point
@@ -494,4 +443,19 @@ structure is:
     not go in the challenge itself, since they can increase learners'
     stress levels.)
 
+## Configuration File
+
+`_config.yml` contains settings for Jekyll.
+Most of these should be left as they are,
+but the following values must be changed:
+
+*   `title`: the lesson's title.
+
+*   `lesson_repo`: the URL of the lesson's GitHub repository,
+    such as `https://github.com/swcarpentry/lesson-example`.
+
+*   `lesson_site`: the URL of the lesson's generated website,
+    such as `http://swcarpentry.github.io/lesson-example'.
+
+[knitr]: http://yihui.name/knitr/
 [swc-lesson-example]: https://github.com/swcarpentry/lesson-example
