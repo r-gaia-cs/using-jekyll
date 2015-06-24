@@ -36,8 +36,6 @@ h2 code, h3 code, h4 code, h5 code, h6 code {
     line-height: 1.1;
     border: 1px solid transparent;
     border-radius: 4px;
-    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
-            box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
 }
 .challenge {
     margin-top: 0px;
@@ -49,8 +47,6 @@ h2 code, h3 code, h4 code, h5 code, h6 code {
     line-height: 1.1;
     border: 1px solid transparent;
     border-radius: 4px;
-    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
-            box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
 }
 .getready {
     margin-top: 0px;
@@ -62,8 +58,7 @@ h2 code, h3 code, h4 code, h5 code, h6 code {
     line-height: 1.1;
     border: 1px solid transparent;
     border-radius: 4px;
-    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
-            box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    
 }
 .objectives {
     margin-top: 0px;
@@ -75,8 +70,7 @@ h2 code, h3 code, h4 code, h5 code, h6 code {
     line-height: 1.1;
     border: 1px solid transparent;
     border-radius: 4px;
-    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
-            box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+   
 }
 .prereq {
     margin-top: 0px;
@@ -88,8 +82,7 @@ h2 code, h3 code, h4 code, h5 code, h6 code {
     line-height: 1.1;
     border: 1px solid transparent;
     border-radius: 4px;
-    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
-            box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+   
 }
 
 .objectives {
@@ -166,9 +159,9 @@ blockquote {
     font-size: inherit;
 }
 /*Styling for Block Quotes*/
-blockquote{
+/*blockquote{
     width:943px;
-}
+}*/
 .objectives{
     border:none;
 }
@@ -193,6 +186,15 @@ blockquote p{
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
 }
+blockquote ul{
+    padding:15px;
+    font-size: 14px;
+    line-height: 1.42857143;
+     border:1px solid #faebcc;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
 
 blockquote.callout h2 {
     background-image: linear-gradient(to bottom, #d9edf7 0%, #c4e3f3 100%);
@@ -219,7 +221,6 @@ blockquote.challenge p{
     font-size: 14px;
     line-height: 1.42857143;
 }
-
 
 blockquote.callout p{
     padding:15px;
@@ -324,6 +325,28 @@ blockquote{
 pre.python{
     color:ForestGreen;
 }
+pre{
+    display:inline-block;
+    margin: 1em;
+    padding: 1em 1em .5em 1em;
+    width: 90%;
+    font-size: inherit;
+    margin-left:0;
+}
+/*/////// Arrow Styling////////////*/
+
+/*h1.title:before{
+    font-family: 'Glyphicons Halflings';
+    content:"\e079";
+    color:#3E51CF;
+    padding-right:10px;
+}
+h1.title:after{
+    font-family: 'Glyphicons Halflings';
+    content:"\e080";
+    padding-left:600px;
+    color:#3E51CF;
+}*/
 
 /* Citation for testimonial quote. */
 blockquote.testimonial cite {
